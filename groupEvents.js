@@ -15,13 +15,13 @@ const Events = async (client, Fortu) => {
             try {
                 dpuser = await client.profilePictureUrl(num, "image");
             } catch {
-                dpuser = "https://telegra.ph/file/0a620a1cf04d3ba3874f5.jpg";
+                dpuser = "https://telegra.ph/file/c9f1fbd5b78d902762e5f.jpg";
             }
 
             if (Fortu.action == "add") {
                 let userName = num;
 
-                let Welcometext = ` Holla @${userName.split("@")[0]} 👋\n\nWelcome to ${metadata.subject}.\n\nGroup Description:-  ${desc}\n\nThank You.\n\nThis is an automated message sent by ${botname} via baileys.`;
+                let Welcometext = ` Hello @${userName.split("@")[0]} \n\nWelcome to ${metadata.subject}.`;
                 if (events === 'true') {
                     await client.sendMessage(Fortu.id, {
                         image: { url: dpuser },
@@ -33,7 +33,7 @@ const Events = async (client, Fortu) => {
                 let userName2 = num;
 
                 let Lefttext = `
-          Good bye @${userName2.split("@")[0]} 👋, probably not gonna miss you `;
+          See ya @${userName2.split("@")[0]} , mate `;
                 if (events === 'true') {
                     await client.sendMessage(Fortu.id, {
                         image: { url: dpuser },
@@ -45,7 +45,7 @@ const Events = async (client, Fortu) => {
                 await client.sendMessage(
                     Fortu.id,
                     {
-                        text: `@${(Fortu.author).split("@")[0]}, has demoted @${(Fortu.participants[0]).split("@")[0]} from admin 👀`,
+                        text: `@${(Fortu.author).split("@")[0]}, has demoted @${(Fortu.participants[0]).split("@")[0]} from administrator.`,
                         mentions: [Fortu.author, Fortu.participants[0]]
                     }
                 );
@@ -54,7 +54,7 @@ const Events = async (client, Fortu) => {
                     await client.sendMessage(
                         Fortu.id,
                         {
-                            text: `@${(Fortu.author).split("@")[0]} has promoted @${(Fortu.participants[0]).split("@")[0]} to admin. 👀`,
+                            text: `@${(Fortu.author).split("@")[0]} has promoted @${(Fortu.participants[0]).split("@")[0]} to administrator.`,
                             mentions: [Fortu.author, Fortu.participants[0]]
                         }
                     );
